@@ -532,56 +532,102 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body">
-							<spring:url value="/inseminacion/updateI.lhs" var="updateURL" />
+							<spring:url value="/inseminacion/update.lhs" var="updateURL" />
 		
-		<form:form modelAttribute="inseminacion/inseminacionFormUpdate" method="post"
-			action="${updateURL }" cssClass="form">
-			
-			<form:hidden path="codigo"/>
-			<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="peso">peso</label>
-				<form:input path="peso" cssClass="form-control" id="peso" />
-			</div>
-			<div class="form-group col-md-6">
-				<label for="talla">talla</label>
-				<form:input path="talla" cssClass="form-control" id="talla" />
-			</div>
-			</div>
-			<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="lugar">lugar</label>
-				<form:input path="lugar" cssClass="form-control" id="lugar" />
-			</div>
-			<div class="form-group col-md-6">
-				<label for="precio">precio</label>
-				<form:input path="precio" cssClass="form-control" id="precio" />
-			</div>
-			</div>
-			
-			<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="fechcompra">fechcompra</label>
-				<form:input path="fechcompra" cssClass="form-control" id="fechcompra" />
-			</div>
-			<div class="form-group col-md-6">
-				<label for="estado">estado</label>
-				<form:input path="estado" cssClass="form-control" id="estado" />
-			</div>
-			</div>
-			
-			<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="genotipo">genotipo</label>
-				<form:input path="genotipo" cssClass="form-control" id="genotipo" />
-			</div>			
-			<div class="form-group col-md-6">
-				<label for="obse">observacion</label>
-				<form:input path="obse" cssClass="form-control" id="obse" />
-			</div>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-		</form:form>
+		<form:form modelAttribute="inseminacion/inseminacionFormUpdate" method="POST"
+			action="${updateURL }" ccClass="form">
+			<form:hidden path="codiPropInse" />
+									<div class="form-row">
+										<div class="col-md-6">
+											<div class="form-group row">
+											<div class="col-5">
+											<label for="codiPropInse" class="col-form-label" >codigo</label>
+											</div>
+											<div class="col-7">
+											<form:input path="codiPropInse" class="form-control" id="codiPropInse" />
+										</div>
+										</div>
+										<div class="form-group row">
+												<div class="col-5">
+													<label for="idGeno" class="col-form-label">Genotipo</label>
+												</div>
+												<div class="col-7">
+													<form:select class="form-control" path="idGeno" id="idGeno" >													
+													<option value="1">Hereford</option>
+													<option value="2">Charolais</option>
+													<option value="3">Limousin</option>
+													<option value="4">Brahman</option>
+													<option value="5">Gyrolando</option>
+													<option value="6">Brown Swiss</option>
+													<option value="7">Criollo</option>											
+													</form:select>
+												</div>																				
+											</div>
+										<div class="form-group row">
+											<div class="col-5">
+											<label for="pesoPropInse" class="col-form-label">peso</label>
+											</div>
+											<div class="col-7">
+											<form:input path="pesoPropInse" class="form-control" id="pesoPropInse" />
+										</div>
+										</div>
+										<div class="form-group row">
+										<div class="col-5">
+											<label for="tallPropInse" class="col-form-label">talla</label>
+											</div>
+											<div class="col-7">
+											<form:input path="tallPropInse" cssClass="form-control" id="tallPropInse" />
+										</div>
+										</div>
+										<div class="form-group row">
+										<div class="col-5">
+										<label for="lugaPropInse" class="col-form-label">lugar</label>
+										</div>
+										<div class="col-7">
+										<form:input path="lugaPropInse" cssClass="form-control" id="lugaPropInse" />
+										</div>
+										</div>
+										<div class="form-group row">
+										<div class="col-5">
+										<label for="precPropInse" class="col-form-label">precio</label>
+										</div>
+										<div class="col-7">
+										<form:input path="precPropInse" cssClass="form-control" id="precPropInse" />
+										</div>
+										</div>
+										<div class="form-group row">
+										<div class="col-5">
+										<label for="fechCompPropInse" class="col-form-label">Fecha de Compra</label>
+										</div>
+										<div class="col-7">
+										<form:input path="fechCompPropInse" ccClass="form-control" type="date"  id="fechCompPropInse" />
+										</div>
+										</div>
+										
+										<div class="form-group row">
+										<div class="col-5">
+										<label for="obse" class="col-form-label">observacion</label>
+										</div>
+										<div class="col-7">
+										<form:input path="obse" cssClass="form-control" id="obse" />
+										</div>
+										</div>
+										<div class="form-group row">
+										<div class="col-5">
+										<label for="esta" class="col-form-label">estado</label>
+										</div>
+										<div class="col-7">
+										<form:select class="form-control col-12" path="esta"  id="esta">
+														<option value="1">Por usar</option>
+														<option value="0">Usado</option>
+													</form:select>
+										</div>																						
+									</div>
+							</div>
+							</div>
+							<button type="submit" class="btn btn-danger" style="align-content: center; width: 300px; height: 45px">Guardar</button>
+								
+								</form:form>
 		</div>
 		</div>
 		</div>

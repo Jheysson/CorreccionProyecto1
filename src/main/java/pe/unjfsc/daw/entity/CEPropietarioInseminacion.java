@@ -1,96 +1,92 @@
 package pe.unjfsc.daw.entity;
 
+import java.time.LocalDate;
+
 public class CEPropietarioInseminacion {
 
-	private int codigo;
-	private double peso;
-	private double talla;
-	private String lugar;
-	private double precio;
-	private String fechcompra;
-	private int estado;
-	private String genotipo;
+	
+	private int codiPropInse;
+	private int idGeno;
+	private double pesoPropInse;
+	private double tallPropInse;
+	private String lugaPropInse;
+	private double precPropInse;
+	private LocalDate fechCompPropInse;
 	private String obse;
+	private int esta;
 	
-public CEPropietarioInseminacion() {}
-	
-	public CEPropietarioInseminacion(int codigo, double peso, double talla, String lugar, double precio, 
-	String fechcompra, int estado, String genotipo, String obse) {
+	public CEPropietarioInseminacion() {
 		
+	}
+
+	public CEPropietarioInseminacion(int codiPropInse, int idGeno, double pesoPropInse, double tallPropInse,
+			String lugaPropInse, double precPropInse, LocalDate fechCompPropInse, String obse, int esta) {
 		super();
-		this.codigo = codigo;
-		this.peso = peso;
-		this.talla = talla;
-		this.lugar= lugar;
-		this.precio= precio;
-		this.fechcompra = fechcompra;
-		this.estado= estado;
-		this.genotipo = genotipo;
+		this.codiPropInse = codiPropInse;
+		this.idGeno = idGeno;
+		this.pesoPropInse = pesoPropInse;
+		this.tallPropInse = tallPropInse;
+		this.lugaPropInse = lugaPropInse;
+		this.precPropInse = precPropInse;
+		this.fechCompPropInse = fechCompPropInse;
 		this.obse = obse;
+		this.esta = esta;
 	}
 
-	public int getcodigo() {
-		return codigo;
+	public int getCodiPropInse() {
+		return codiPropInse;
 	}
 
-	public void setcodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodiPropInse(int codiPropInse) {
+		this.codiPropInse = codiPropInse;
 	}
 
-	public double getPeso() {
-		return peso;
+	public int getIdGeno() {
+		return idGeno;
 	}
 
-	public void setPeso(double peso) {
-		this.peso = peso;
+	public void setIdGeno(int idGeno) {
+		this.idGeno = idGeno;
 	}
 
-	public double getTalla() {
-		return talla;
+	public double getPesoPropInse() {
+		return pesoPropInse;
 	}
 
-	public void setTalla(double talla) {
-		this.talla = talla;
+	public void setPesoPropInse(double pesoPropInse) {
+		this.pesoPropInse = pesoPropInse;
 	}
 
-	public String getLugar() {
-		return lugar;
+	public double getTallPropInse() {
+		return tallPropInse;
 	}
 
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
+	public void setTallPropInse(double tallPropInse) {
+		this.tallPropInse = tallPropInse;
 	}
 
-	public double getPrecio() {
-		return precio;
+	public String getLugaPropInse() {
+		return lugaPropInse;
 	}
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public void setLugaPropInse(String lugaPropInse) {
+		this.lugaPropInse = lugaPropInse;
 	}
 
-	public String getFechcompra() {
-		return fechcompra;
+	public double getPrecPropInse() {
+		return precPropInse;
 	}
 
-	public void setFechcompra(String fechcompra) {
-		this.fechcompra = fechcompra;
+	public void setPrecPropInse(double precPropInse) {
+		this.precPropInse = precPropInse;
 	}
 
-	public int getEstado() {
-		return estado;
+	public LocalDate getFechCompPropInse() {
+		return fechCompPropInse;
 	}
 
-	public void setEstado(int estado) {
-		this.estado = estado;
-	}
-
-	public String getGenotipo() {
-		return genotipo;
-	}
-
-	public void setGenotipo(String genotipo) {
-		this.genotipo = genotipo;
+	public void setFechCompPropInse(LocalDate fechCompPropInse) {
+		this.fechCompPropInse = fechCompPropInse;
 	}
 
 	public String getObse() {
@@ -101,27 +97,35 @@ public CEPropietarioInseminacion() {}
 		this.obse = obse;
 	}
 
+	public int getEsta() {
+		return esta;
+	}
+
+	public void setEsta(int esta) {
+		this.esta = esta;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("CEPropietarioInseminacion [codigo=");
-		builder.append(codigo);
-		builder.append(", peso=");
-		builder.append(peso);
-		builder.append(", talla=");
-		builder.append(talla);
-		builder.append(", lugar=");
-		builder.append(lugar);
-		builder.append(", precio=");
-		builder.append(precio);
-		builder.append(", fechcompra=");
-		builder.append(fechcompra);
-		builder.append(", estado=");
-		builder.append(estado);
-		builder.append(", genotipo=");
-		builder.append(genotipo);
+		builder.append("CEPropietarioInseminacion [codiPropInse=");
+		builder.append(codiPropInse);
+		builder.append(", idGeno=");
+		builder.append(idGeno);
+		builder.append(", pesoPropInse=");
+		builder.append(pesoPropInse);
+		builder.append(", tallPropInse=");
+		builder.append(tallPropInse);
+		builder.append(", lugaPropInse=");
+		builder.append(lugaPropInse);
+		builder.append(", precPropInse=");
+		builder.append(precPropInse);
+		builder.append(", fechCompPropInse=");
+		builder.append(fechCompPropInse);
 		builder.append(", obse=");
 		builder.append(obse);
+		builder.append(", esta=");
+		builder.append(esta);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -129,5 +133,3 @@ public CEPropietarioInseminacion() {}
 	
 	
 }
-
-

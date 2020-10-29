@@ -543,12 +543,6 @@
 													Registro de Produccion Leche</a>
 											</div>
 										</div>
-										<div class="ml-auto">
-											<div class="form-group">
-												<input id="demo-input-search2" type="text"
-													placeholder="Search" autocomplete="off">
-											</div>
-										</div>
 									</div>
 									<div class="container">
 										<div class="container tab-pane active">
@@ -556,8 +550,7 @@
 												class="table table-bordered table-hover toggle-circle footable-loaded footable tablet breakpoint">
 												<thead>
 													<tr>
-
-														<th scope="col">ID Produccion</th>
+														<th scope="col">N°</th>
 														<th scope="col">Cantidad Lts.</th>
 														<th scope="col">fecha Produccion</th>
 														<th scope="col">CUIA Vaca Productora</th>

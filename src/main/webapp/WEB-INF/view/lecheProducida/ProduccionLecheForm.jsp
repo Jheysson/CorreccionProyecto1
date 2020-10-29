@@ -503,7 +503,7 @@
 				<!-- ============================================================== -->
 				<div class="row page-titles">
 					<div class="col-md-5 align-self-center">
-						<h3 class="text-themecolor">Registro Produccion Leche</h3>
+						<h2 class="text-themecolor">Registro Produccion Leche</h2>
 					</div>
 					<div class="col-md-7 align-self-center">
 						<ol class="breadcrumb">
@@ -530,9 +530,10 @@
 				<!-- Start Page Content -->
 				
 				<!-- ============================================================== -->
-				<div class="row">
-					<div class="col-12">
-						<div class="card">
+				
+				<div class="row justify-content-center h-100" >
+					<div class="col-6 align-self-center text-center" >
+						<div class="card container">
 							<div class="card-body">
 								<spring:url value="/lecheProducida/save.lhs" var="saveURL" />
 								<form:form modelAttribute="lecheProducida/ProduccionLecheForm"
@@ -561,7 +562,7 @@
 									</div>
 				
 									<button type="submit" class="btn btn-danger"
-										style="align-content: center; width: 300px; height: 45px">Guardar</button>
+										style=" width: 300px; height: 45px">Guardar</button>
 								</form:form>
 							</div>
 						</div>

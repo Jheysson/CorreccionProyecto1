@@ -9,6 +9,7 @@ public class CEGanadoEnfermo {
 		private String observacion;
 		private int Estado;
 		public CEGanadoEnfermo() {
+			
 		}
 		public CEGanadoEnfermo (int CUIA, String enfermedad, String fechIngreso, String observacion, int Estado) {
 			super();

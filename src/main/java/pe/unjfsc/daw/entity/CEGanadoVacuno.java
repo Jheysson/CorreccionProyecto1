@@ -14,291 +14,191 @@ public class CEGanadoVacuno {
 	private int cuiaMadre;
 	private int cuiaPadre;
 	private String obse;
-	private int esta;
+	private String sexo;
 	
-	private int idSexo;
-	private int idEstaActiv;
-	private int idOrig;
-	private int idTipoGana;
-	private int idGeno;
-	private int idPropInse;
-	private String etapa;
+	private String Etapa;
 	
+	
+	private String estaActivo;
+	private String estaAnim;
+	private String genotipo;
+	private String tipoGana;
+	private String origen;
 	
 
 	public CEGanadoVacuno() {
 		 
 	}
 
-
-
-	public CEGanadoVacuno(int cuia, int edad, String aliasGanadoVacuno, String fecha_nacimiento, double peso,
-			double talla, int cantiPartGana, LocalDate fechActuGana, int cuiaMadre, int cuiaPadre, String obse,
-			int esta, int idSexo, int idEstaActiv, int idOrig, int idTipoGana, int idGeno, int idPropInse,
-			String etapa) {
+	public CEGanadoVacuno(int cuia, String aliasGanadoVacuno, String fecha_nacimiento, String sexo, int edad,
+			String etapa, double peso, double talla, String estaActivo, String estaAnim, String genotipo,
+			String tipoGana, String origen, int cuiaPadre, int cuiaMadre) {
 		super();
 		this.cuia = cuia;
-		this.edad = edad;
 		this.aliasGanadoVacuno = aliasGanadoVacuno;
 		this.fecha_nacimiento = fecha_nacimiento;
+		this.sexo = sexo;
+		this.edad = edad;
+		Etapa = etapa;
 		this.peso = peso;
 		this.talla = talla;
-		this.cantiPartGana = cantiPartGana;
-		this.fechActuGana = fechActuGana;
-		this.cuiaMadre = cuiaMadre;
+		this.estaActivo = estaActivo;
+		this.estaAnim = estaAnim;
+		this.genotipo = genotipo;
+		this.tipoGana = tipoGana;
+		this.origen = origen;
 		this.cuiaPadre = cuiaPadre;
-		this.obse = obse;
-		this.esta = esta;
-		this.idSexo = idSexo;
-		this.idEstaActiv = idEstaActiv;
-		this.idOrig = idOrig;
-		this.idTipoGana = idTipoGana;
-		this.idGeno = idGeno;
-		this.idPropInse = idPropInse;
-		this.etapa = etapa;
+		this.cuiaMadre = cuiaMadre;
 	}
+	
 
-
+	public CEGanadoVacuno(int cuia, String aliasGanadoVacuno, String fecha_nacimiento, String sexo, double peso,
+			double talla, String estaActivo, String estaAnim, String genotipo, String tipoGana, String origen,
+			int cuiaPadre, int cuiaMadre) {
+		super();
+		this.cuia = cuia;
+		this.aliasGanadoVacuno = aliasGanadoVacuno;
+		this.fecha_nacimiento = fecha_nacimiento;
+		this.sexo = sexo;
+		this.peso = peso;
+		this.talla = talla;
+		this.estaActivo = estaActivo;
+		this.estaAnim = estaAnim;
+		this.genotipo = genotipo;
+		this.tipoGana = tipoGana;
+		this.origen = origen;
+		this.cuiaPadre = cuiaPadre;
+		this.cuiaMadre = cuiaMadre;
+	}
 
 	public int getCuia() {
 		return cuia;
 	}
 
-
-
 	public void setCuia(int cuia) {
 		this.cuia = cuia;
 	}
-
-
-
-	public int getEdad() {
-		return edad;
-	}
-
-
-
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-
 
 	public String getAliasGanadoVacuno() {
 		return aliasGanadoVacuno;
 	}
 
-
-
 	public void setAliasGanadoVacuno(String aliasGanadoVacuno) {
 		this.aliasGanadoVacuno = aliasGanadoVacuno;
 	}
-
-
 
 	public String getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
 
-
-
 	public void setFecha_nacimiento(String fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
+	public String getSexo() {
+		return sexo;
+	}
 
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public String getEtapa() {
+		return Etapa;
+	}
+
+	public void setEtapa(String etapa) {
+		Etapa = etapa;
+	}
 
 	public double getPeso() {
 		return peso;
 	}
 
-
-
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-
-
 
 	public double getTalla() {
 		return talla;
 	}
 
-
-
 	public void setTalla(double talla) {
 		this.talla = talla;
 	}
 
-
-
-	public int getCantiPartGana() {
-		return cantiPartGana;
+	public String getEstaActivo() {
+		return estaActivo;
 	}
 
-
-
-	public void setCantiPartGana(int cantiPartGana) {
-		this.cantiPartGana = cantiPartGana;
+	public void setEstaActivo(String estaActivo) {
+		this.estaActivo = estaActivo;
 	}
 
-
-
-	public LocalDate getFechActuGana() {
-		return fechActuGana;
+	public String getEstaAnim() {
+		return estaAnim;
 	}
 
-
-
-	public void setFechActuGana(LocalDate fechActuGana) {
-		this.fechActuGana = fechActuGana;
+	public void setEstaAnim(String estaAnim) {
+		this.estaAnim = estaAnim;
 	}
 
-
-
-	public int getCuiaMadre() {
-		return cuiaMadre;
+	public String getGenotipo() {
+		return genotipo;
 	}
 
-
-
-	public void setCuiaMadre(int cuiaMadre) {
-		this.cuiaMadre = cuiaMadre;
+	public void setGenotipo(String genotipo) {
+		this.genotipo = genotipo;
 	}
 
+	public String getTipoGana() {
+		return tipoGana;
+	}
 
+	public void setTipoGana(String tipoGana) {
+		this.tipoGana = tipoGana;
+	}
+
+	public String getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
 
 	public int getCuiaPadre() {
 		return cuiaPadre;
 	}
 
-
-
 	public void setCuiaPadre(int cuiaPadre) {
 		this.cuiaPadre = cuiaPadre;
 	}
 
-
-
-	public String getObse() {
-		return obse;
+	public int getCuiaMadre() {
+		return cuiaMadre;
 	}
 
-
-
-	public void setObse(String obse) {
-		this.obse = obse;
+	public void setCuiaMadre(int cuiaMadre) {
+		this.cuiaMadre = cuiaMadre;
 	}
-
-
-
-	public int getEsta() {
-		return esta;
-	}
-
-
-
-	public void setEsta(int esta) {
-		this.esta = esta;
-	}
-
-
-
-	public int getIdSexo() {
-		return idSexo;
-	}
-
-
-
-	public void setIdSexo(int idSexo) {
-		this.idSexo = idSexo;
-	}
-
-
-
-	public int getIdEstaActiv() {
-		return idEstaActiv;
-	}
-
-
-
-	public void setIdEstaActiv(int idEstaActiv) {
-		this.idEstaActiv = idEstaActiv;
-	}
-
-
-
-	public int getIdOrig() {
-		return idOrig;
-	}
-
-
-
-	public void setIdOrig(int idOrig) {
-		this.idOrig = idOrig;
-	}
-
-
-
-	public int getIdTipoGana() {
-		return idTipoGana;
-	}
-
-
-
-	public void setIdTipoGana(int idTipoGana) {
-		this.idTipoGana = idTipoGana;
-	}
-
-
-
-	public int getIdGeno() {
-		return idGeno;
-	}
-
-
-
-	public void setIdGeno(int idGeno) {
-		this.idGeno = idGeno;
-	}
-
-
-
-	public int getIdPropInse() {
-		return idPropInse;
-	}
-
-
-
-	public void setIdPropInse(int idPropInse) {
-		this.idPropInse = idPropInse;
-	}
-
-
-
-	public String getEtapa() {
-		return etapa;
-	}
-
-
-
-	public void setEtapa(String etapa) {
-		etapa = etapa;
-	}
-
-
 
 	@Override
 	public String toString() {
-		return "CEGanadoVacuno [cuia=" + cuia + ", edad=" + edad + ", aliasGanadoVacuno=" + aliasGanadoVacuno
-				+ ", fecha_nacimiento=" + fecha_nacimiento + ", peso=" + peso + ", talla=" + talla + ", cantiPartGana="
-				+ cantiPartGana + ", fechActuGana=" + fechActuGana + ", cuiaMadre=" + cuiaMadre + ", cuiaPadre="
-				+ cuiaPadre + ", obse=" + obse + ", esta=" + esta + ", idSexo=" + idSexo + ", idEstaActiv="
-				+ idEstaActiv + ", idOrig=" + idOrig + ", idTipoGana=" + idTipoGana + ", idGeno=" + idGeno
-				+ ", idPropInse=" + idPropInse + ", Etapa=" + etapa + "]";
+		return "CEGanadoVacuno [cuia=" + cuia + ", aliasGanadoVacuno=" + aliasGanadoVacuno + ", fecha_nacimiento="
+				+ fecha_nacimiento + ", sexo=" + sexo + ", edad=" + edad + ", Etapa=" + Etapa + ", peso=" + peso
+				+ ", talla=" + talla + ", estaActivo=" + estaActivo + ", estaAnim=" + estaAnim + ", genotipo="
+				+ genotipo + ", tipoGana=" + tipoGana + ", origen=" + origen + ", cuiaPadre=" + cuiaPadre
+				+ ", cuiaMadre=" + cuiaMadre + "]";
 	}
-
-	
 
 	
 }

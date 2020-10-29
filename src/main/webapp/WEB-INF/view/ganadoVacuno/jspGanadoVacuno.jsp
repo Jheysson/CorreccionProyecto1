@@ -563,22 +563,22 @@
 											<tbody>
 												<co:forEach items="${model.listGanadoVacuno}" var="item">
 													<tr>
-														<td><co:out value="${item.cuia}"></co:out></td>
-														<td><co:out value="${item.aliasGanadoVacuno}"></co:out></td>
-														<td><co:out value="${item.fecha_nacimiento}"></co:out></td>
+														<td><co:out value="${item.cuiaGana}"></co:out></td>
+														<td><co:out value="${item.aliaGana}"></co:out></td>
+														<td><co:out value="${item.fechNaciGana}"></co:out></td>
 														<td><co:out value="${item.idSexo}"></co:out></td>
-														<td><co:out value="${item.edad}"></co:out></td>
+														<td><co:out value="${item.edadGana}"></co:out></td>
 														<td><co:out value="${item.etapa}"></co:out></td>
-														<td><co:out value="${item.peso}"></co:out></td>
-														<td><co:out value="${item.talla}"></co:out></td>
+														<td><co:out value="${item.pesoGana}"></co:out></td>
+														<td><co:out value="${item.tallGana}"></co:out></td>
 														<td><co:out value="${item.idGeno}"></co:out></td>
 														<td><co:out value="${item.idTipoGana}"></co:out></td>
 														<td><spring:url
-															value="/ganadoVacuno/updateGanadoVacuno.lhs/${item.cuia}.lhs"
+															value="/ganadoVacuno/updateGanadoVacuno.lhs/${item.cuiaGana}.lhs"
 															var="updateURL" /> <a class="btn btn-primary"
 														href="${updateURL}" role="button">Update</a></td>
 													<td><spring:url
-															value="/ganadoVacuno/eliminarGanadoVacuno.lhs/${item.cuia}.lhs"
+															value="/ganadoVacuno/eliminarGanadoVacuno.lhs/${item.cuiaGana}.lhs"
 															var="deleteURL" /> <a class="btn btn-primary"
 														href="${deleteURL }" role="button">Delete</a></td>
 													</tr>

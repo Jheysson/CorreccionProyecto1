@@ -49,8 +49,8 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	}
 	@Override
 	public void saveGanadoVacuno(CEGanadoVacuno poCEGanadoVacuno) {
-		log.info("FECHA ANTES DE SER EVALUADA"+poCEGanadoVacuno.getFecha_nacimiento());
-		log.info("MI FECHA ES DE TIPO"+((Object)poCEGanadoVacuno.getFecha_nacimiento().getClass().getSimpleName()));
+		log.info("FECHA ANTES DE SER EVALUADA"+poCEGanadoVacuno.getFechNaciGana());
+		log.info("MI FECHA ES DE TIPO"+((Object)poCEGanadoVacuno.getFechNaciGana().getClass().getSimpleName()));
 		boolean madreApta = buscarMadre(poCEGanadoVacuno);
 		boolean verifExistente = verificarExiste(poCEGanadoVacuno);
 		if (madreApta && verifExistente) {
@@ -70,24 +70,24 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 					poCEGanadoVacuno.getOrigen(), 
 					poCEGanadoVacuno.getCuiaPadre(),
 					poCEGanadoVacuno.getCuiaMadre()*/
-					poCEGanadoVacuno.getCuia(),
-					calcularEdad(poCEGanadoVacuno.getFecha_nacimiento()),
-					poCEGanadoVacuno.getAliasGanadoVacuno(),
-					poCEGanadoVacuno.getFecha_nacimiento(),
-					poCEGanadoVacuno.getPeso(),
-					poCEGanadoVacuno.getTalla(),
+					poCEGanadoVacuno.getCuiaGana(),
+					calcularEdad(poCEGanadoVacuno.getFechNaciGana()),
+					poCEGanadoVacuno.getAliaGana(),
+					poCEGanadoVacuno.getFechNaciGana(),
+					poCEGanadoVacuno.getPesoGana(),
+					poCEGanadoVacuno.getTallGana(),
 					poCEGanadoVacuno.getCantiPartGana(),
 					LocalDate.now(),
-					poCEGanadoVacuno.getCuiaMadre(),
-					poCEGanadoVacuno.getCuiaPadre(),
+					poCEGanadoVacuno.getCuiaMadr(),
+					poCEGanadoVacuno.getCuiaPadr(),
 					poCEGanadoVacuno.getObse(),
 					1,
 					poCEGanadoVacuno.getIdSexo(),
-					poCEGanadoVacuno.getIdEstaActiv(),
+					poCEGanadoVacuno.getIdEstaActi(),
 					poCEGanadoVacuno.getIdOrig(),
 					poCEGanadoVacuno.getIdTipoGana(),
 					poCEGanadoVacuno.getIdGeno(),0,
-					asignarEtapa(calcularEdad(poCEGanadoVacuno.getFecha_nacimiento()))
+					asignarEtapa(calcularEdad(poCEGanadoVacuno.getFechNaciGana()))
 					));
 		}else {
 			log.info("NO SE PUDO REGISTRAR");
@@ -101,8 +101,8 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		
 		while(it.hasNext()) {
 			moCEGanadoVacuno = it.next();
-			if (moCEGanadoVacuno.getCuia() == poCEGanadoVacuno.getCuia()) {
-				log.info("ACTUALIZANDO EL REGISTRO CON EL CUIA "+poCEGanadoVacuno.getCuia()+"...");
+			if (moCEGanadoVacuno.getCuiaGana() == poCEGanadoVacuno.getCuiaGana()) {
+				log.info("ACTUALIZANDO EL REGISTRO CON EL CUIA "+poCEGanadoVacuno.getCuiaGana()+"...");
 				
 				/*moCEGanadoVacuno.setAliasGanadoVacuno(poCEGanadoVacuno.getAliasGanadoVacuno());
 				moCEGanadoVacuno.setCuiaMadre(poCEGanadoVacuno.getCuiaMadre());
@@ -129,7 +129,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		while(it.hasNext()) {
 			moCEGanadoVacuno = it.next();
 			
-			if (moCEGanadoVacuno.getCuia() == CUIA) {
+			if (moCEGanadoVacuno.getCuiaGana() == CUIA) {
 				linkedHashSetGanadoVacuno.remove(moCEGanadoVacuno);
 				break;
 			}
@@ -150,7 +150,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		
 		while(it.hasNext()) {
 			moCEGanadoVacuno = it.next();
-			if (moCEGanadoVacuno.getCuia() == CUIA) {
+			if (moCEGanadoVacuno.getCuiaGana() == CUIA) {
 				oCEGanadoVacunoResponse = moCEGanadoVacuno;
 				break;
 			}
@@ -179,15 +179,15 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		
 	}protected boolean buscarMadre(CEGanadoVacuno oCEGanadoVacuno) {
 		boolean rpta = false;
-		log.info("VERIFICANDO EL CUIA DE MADRE "+oCEGanadoVacuno.getCuiaMadre()+" EN LOS REGISTROS");
-		if (oCEGanadoVacuno.getCuiaMadre() !=0) {
+		log.info("VERIFICANDO EL CUIA DE MADRE "+oCEGanadoVacuno.getCuiaMadr()+" EN LOS REGISTROS");
+		if (oCEGanadoVacuno.getCuiaMadr() !=0) {
 			Iterator<CEGanadoVacuno> it = linkedHashSetGanadoVacuno.iterator();
 			while(it.hasNext()) {
 				moCEGanadoVacuno = it.next();
 
-					if (moCEGanadoVacuno.getCuia() == oCEGanadoVacuno.getCuiaMadre()) {
+					if (moCEGanadoVacuno.getCuiaGana() == oCEGanadoVacuno.getCuiaMadr()) {
 						log.info("SE ENCONTRÓ EL CUIA INGRESADO DE LA MADRE EN LOS REGISTROS ACTUALES");
-						if (moCEGanadoVacuno.getIdSexo()==0 && moCEGanadoVacuno.getEdad()>18) {
+						if (moCEGanadoVacuno.getIdSexo()==0 && moCEGanadoVacuno.getEdadGana()>18) {
 							log.info("SE VALIDÓ COMO HEMBRA APTA");
 							rpta = true;
 							break;
@@ -216,7 +216,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		while(it.hasNext()) {
 			moCEGanadoVacuno = it.next();
 
-				if (moCEGanadoVacuno.getCuia() == oCEGanadoVacuno.getCuia()) {
+				if (moCEGanadoVacuno.getCuiaGana() == oCEGanadoVacuno.getCuiaGana()) {
 					log.info("EL CUIA QUE SE INTENTA REGISTRAR YA EXISTE");
 					rpta = false;
 					break;

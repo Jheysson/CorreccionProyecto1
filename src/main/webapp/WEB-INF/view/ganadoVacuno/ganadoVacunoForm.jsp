@@ -539,26 +539,26 @@
 										<div class="col-md-6">
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="cuia" class="col-form-label">CUIA</label>
+													<label for="cuiaGana" class="col-form-label">CUIA</label>
 												</div>
 												<div class="col-7">
-													<form:input path="cuia" cssClass="form-control" id="cuia" />
+													<form:input path="cuiaGana" cssClass="form-control" id="cuia" />
 												</div>
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="aliasGanadoVacuno" class="col-form-label">Alias</label>
+													<label for="aliaGana" class="col-form-label">Alias</label>
 												</div>
 												<div class="col-7">
-													<form:input path="aliasGanadoVacuno" cssClass="form-control" id="aliasGanadoVacuno" />
+													<form:input path="aliaGana" cssClass="form-control" id="aliaGana" />
 												</div>								
 											</div>
 											<div class="form-group row">										
 												<div class="col-5">
-													<label for="fecha_nacimiento" class="col-form-label">Fecha Nacimiento</label>
+													<label for="fechNaciGana" class="col-form-label">Fecha Nacimiento</label>
 												</div>
 												<div class="col-7">
-													<form:input type="date" path="fecha_nacimiento" cssClass="form-control" id="fecha_nacimiento" />
+													<form:input type="date" path="fechNaciGana" cssClass="form-control" id="fechNaciGana" />
 												</div>												
 											</div>
 											<div class="form-group row">
@@ -590,28 +590,28 @@
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="peso" class="col-form-label">Peso</label>
+													<label for="pesoGana" class="col-form-label">pesoGana</label>
 												</div>
 												<div class="col-7">
-													<form:input path="peso" cssClass="form-control" id="peso" />
+													<form:input path="pesoGana" cssClass="form-control" id="pesoGana" />
 												</div>																					
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="talla" class="col-form-label">Talla</label>
+													<label for="tallGana" class="col-form-label">tallGana</label>
 												</div>
 												<div class="col-7">
-													<form:input path="talla" cssClass="form-control" id="talla" />
+													<form:input path="tallGana" cssClass="form-control" id="tallGana" />
 												</div>																															
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="idEstaActiv" class="col-form-label">Estado Activo</label>
+													<label for="idEstaActi" class="col-form-label">Estado Activo</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control col-12" path="idEstaActiv" id="idEstaActiv">																										
+													<form:select class="form-control col-12" path="idEstaActi" id="idEstaActi">																										
 														<option value="2">Produccion</option>													
 														<option value="1">Preñada</option>
 														<option value="0">Seca</option>								
@@ -654,18 +654,18 @@
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="cuiaPadre" class="col-form-label">CUIA Padre</label>
+													<label for="cuiaPadr" class="col-form-label">CUIA Padre</label>
 												</div>
 												<div class="col-7">
-													<form:input path="cuiaPadre" cssClass="form-control" id="cuiaPadre" />
+													<form:input path="cuiaPadr" cssClass="form-control" id="cuiaPadr" />
 												</div>																						
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="cuiaMadre" class="col-form-label">CUIA Madre</label>
+													<label for="cuiaMadr" class="col-form-label">CUIA Madre</label>
 												</div>
 												<div class="col-7">
-													<form:input path="cuiaMadre" cssClass="form-control" id="cuiaMadre" />
+													<form:input path="cuiaMadr" cssClass="form-control" id="cuiaMadr" />
 												</div>																						
 											</div>
 										</div>

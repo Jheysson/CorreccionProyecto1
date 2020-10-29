@@ -3,21 +3,21 @@ package pe.unjfsc.daw.entity;
 import java.time.LocalDate;
 
 public class CEGanadoVacuno {
-	private int cuia;
-	private int edad;
-	private String aliasGanadoVacuno;
-	private String fecha_nacimiento;
-	private double peso;
-	private double talla;
+	private int cuiaGana;
+	private int edadGana;
+	private String aliaGana;
+	private String fechNaciGana;
+	private double pesoGana;
+	private double tallGana;
 	private int cantiPartGana;
 	private LocalDate fechActuGana;
-	private int cuiaMadre;
-	private int cuiaPadre;
+	private int cuiaMadr;
+	private int cuiaPadr;
 	private String obse;
 	private int esta;
 	
 	private int idSexo;
-	private int idEstaActiv;
+	private int idEstaActi;
 	private int idOrig;
 	private int idTipoGana;
 	private int idGeno;
@@ -37,20 +37,20 @@ public class CEGanadoVacuno {
 			int esta, int idSexo, int idEstaActiv, int idOrig, int idTipoGana, int idGeno, int idPropInse,
 			String etapa) {
 		super();
-		this.cuia = cuia;
-		this.edad = edad;
-		this.aliasGanadoVacuno = aliasGanadoVacuno;
-		this.fecha_nacimiento = fecha_nacimiento;
-		this.peso = peso;
-		this.talla = talla;
+		this.cuiaGana = cuia;
+		this.edadGana = edad;
+		this.aliaGana = aliasGanadoVacuno;
+		this.fechNaciGana = fecha_nacimiento;
+		this.pesoGana = peso;
+		this.tallGana = talla;
 		this.cantiPartGana = cantiPartGana;
 		this.fechActuGana = fechActuGana;
-		this.cuiaMadre = cuiaMadre;
-		this.cuiaPadre = cuiaPadre;
+		this.cuiaMadr = cuiaMadre;
+		this.cuiaPadr = cuiaPadre;
 		this.obse = obse;
 		this.esta = esta;
 		this.idSexo = idSexo;
-		this.idEstaActiv = idEstaActiv;
+		this.idEstaActi = idEstaActiv;
 		this.idOrig = idOrig;
 		this.idTipoGana = idTipoGana;
 		this.idGeno = idGeno;
@@ -60,74 +60,74 @@ public class CEGanadoVacuno {
 
 
 
-	public int getCuia() {
-		return cuia;
+	public int getCuiaGana() {
+		return cuiaGana;
 	}
 
 
 
-	public void setCuia(int cuia) {
-		this.cuia = cuia;
+	public void setCuiaGana(int cuiaGana) {
+		this.cuiaGana = cuiaGana;
 	}
 
 
 
-	public int getEdad() {
-		return edad;
+	public int getEdadGana() {
+		return edadGana;
 	}
 
 
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setEdadGana(int edadGana) {
+		this.edadGana = edadGana;
 	}
 
 
 
-	public String getAliasGanadoVacuno() {
-		return aliasGanadoVacuno;
+	public String getAliaGana() {
+		return aliaGana;
 	}
 
 
 
-	public void setAliasGanadoVacuno(String aliasGanadoVacuno) {
-		this.aliasGanadoVacuno = aliasGanadoVacuno;
+	public void setAliaGana(String aliaGana) {
+		this.aliaGana = aliaGana;
 	}
 
 
 
-	public String getFecha_nacimiento() {
-		return fecha_nacimiento;
+	public String getFechNaciGana() {
+		return fechNaciGana;
 	}
 
 
 
-	public void setFecha_nacimiento(String fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+	public void setFechNaciGana(String fechNaciGana) {
+		this.fechNaciGana = fechNaciGana;
 	}
 
 
 
-	public double getPeso() {
-		return peso;
+	public double getPesoGana() {
+		return pesoGana;
 	}
 
 
 
-	public void setPeso(double peso) {
-		this.peso = peso;
+	public void setPesoGana(double pesoGana) {
+		this.pesoGana = pesoGana;
 	}
 
 
 
-	public double getTalla() {
-		return talla;
+	public double getTallGana() {
+		return tallGana;
 	}
 
 
 
-	public void setTalla(double talla) {
-		this.talla = talla;
+	public void setTallGana(double tallGana) {
+		this.tallGana = tallGana;
 	}
 
 
@@ -156,26 +156,26 @@ public class CEGanadoVacuno {
 
 
 
-	public int getCuiaMadre() {
-		return cuiaMadre;
+	public int getCuiaMadr() {
+		return cuiaMadr;
 	}
 
 
 
-	public void setCuiaMadre(int cuiaMadre) {
-		this.cuiaMadre = cuiaMadre;
+	public void setCuiaMadr(int cuiaMadr) {
+		this.cuiaMadr = cuiaMadr;
 	}
 
 
 
-	public int getCuiaPadre() {
-		return cuiaPadre;
+	public int getCuiaPadr() {
+		return cuiaPadr;
 	}
 
 
 
-	public void setCuiaPadre(int cuiaPadre) {
-		this.cuiaPadre = cuiaPadre;
+	public void setCuiaPadr(int cuiaPadr) {
+		this.cuiaPadr = cuiaPadr;
 	}
 
 
@@ -216,14 +216,14 @@ public class CEGanadoVacuno {
 
 
 
-	public int getIdEstaActiv() {
-		return idEstaActiv;
+	public int getIdEstaActi() {
+		return idEstaActi;
 	}
 
 
 
-	public void setIdEstaActiv(int idEstaActiv) {
-		this.idEstaActiv = idEstaActiv;
+	public void setIdEstaActi(int idEstaActi) {
+		this.idEstaActi = idEstaActi;
 	}
 
 
@@ -283,22 +283,23 @@ public class CEGanadoVacuno {
 
 
 	public void setEtapa(String etapa) {
-		etapa = etapa;
+		this.etapa = etapa;
 	}
 
 
 
 	@Override
 	public String toString() {
-		return "CEGanadoVacuno [cuia=" + cuia + ", edad=" + edad + ", aliasGanadoVacuno=" + aliasGanadoVacuno
-				+ ", fecha_nacimiento=" + fecha_nacimiento + ", peso=" + peso + ", talla=" + talla + ", cantiPartGana="
-				+ cantiPartGana + ", fechActuGana=" + fechActuGana + ", cuiaMadre=" + cuiaMadre + ", cuiaPadre="
-				+ cuiaPadre + ", obse=" + obse + ", esta=" + esta + ", idSexo=" + idSexo + ", idEstaActiv="
-				+ idEstaActiv + ", idOrig=" + idOrig + ", idTipoGana=" + idTipoGana + ", idGeno=" + idGeno
-				+ ", idPropInse=" + idPropInse + ", Etapa=" + etapa + "]";
+		return "CEGanadoVacuno [cuiaGana=" + cuiaGana + ", edadGana=" + edadGana + ", aliaGana=" + aliaGana
+				+ ", fechNaciGana=" + fechNaciGana + ", pesoGana=" + pesoGana + ", tallGana=" + tallGana
+				+ ", cantiPartGana=" + cantiPartGana + ", fechActuGana=" + fechActuGana + ", cuiaMadr=" + cuiaMadr
+				+ ", cuiaPadr=" + cuiaPadr + ", obse=" + obse + ", esta=" + esta + ", idSexo=" + idSexo
+				+ ", idEstaActi=" + idEstaActi + ", idOrig=" + idOrig + ", idTipoGana=" + idTipoGana + ", idGeno="
+				+ idGeno + ", idPropInse=" + idPropInse + ", etapa=" + etapa + "]";
 	}
 
-	
 
+
+	
 	
 }

@@ -5,14 +5,14 @@ public class CELecheProducidaDia {
 	private int idLechProd;
 	private double cantLitrLechProd;
 	private String fechLechProd;
-	private int vacaProducion;
+	private int idVacaProd;
 
-	public CELecheProducidaDia(int _idLechProd, double _cantLitrLechProd, String _fechLechProd, int _vacaProducion) {
+	public CELecheProducidaDia(int _idLechProd, double _cantLitrLechProd, String _fechLechProd, int _idVacaProd) {
 		super();
 		this.idLechProd = _idLechProd;
 		this.cantLitrLechProd = _cantLitrLechProd;
 		this.fechLechProd = _fechLechProd;
-		this.vacaProducion = _vacaProducion;
+		this.idVacaProd = _idVacaProd;
 	}
 
 	public CELecheProducidaDia() {
@@ -44,11 +44,11 @@ public class CELecheProducidaDia {
 	}
 
 	public int getVacaProducion() {
-		return vacaProducion;
+		return idVacaProd;
 	}
 
 	public void setVacaProducion(int vacaProducion) {
-		this.vacaProducion = vacaProducion;
+		this.idVacaProd = vacaProducion;
 	}
 
 	@Override
@@ -60,8 +60,8 @@ public class CELecheProducidaDia {
 		builder.append(cantLitrLechProd);
 		builder.append(", fechLechProd=");
 		builder.append(fechLechProd);
-		builder.append(", vacaProducion=");
-		builder.append(vacaProducion);
+		builder.append(", idVacaProd=");
+		builder.append(idVacaProd);
 		builder.append("]");
 		return builder.toString();
 	}

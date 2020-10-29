@@ -563,29 +563,29 @@
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="genotipo" class="col-form-label">Genotipo</label>
+													<label for="idGeno" class="col-form-label">Genotipo</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control" path="genotipo" id="genotipo" >													
-													<option value="Hereford">Hereford</option>
-													<option value="Charolais">Charolais</option>
-													<option value="Limousin">Limousin</option>
-													<option value="Brahman">Brahman</option>
-													<option value="Gyrolando">Gyrolando</option>
-													<option value="Brown Swiss">Brown Swiss</option>
-													<option value="Criollo">Criollo</option>											
+													<form:select class="form-control" path="idGeno" id="idGeno" >													
+													<option value="1">Hereford</option>
+													<option value="2">Charolais</option>
+													<option value="3">Limousin</option>
+													<option value="4">Brahman</option>
+													<option value="5">Gyrolando</option>
+													<option value="6">Brown Swiss</option>
+													<option value="7">Criollo</option>											
 													</form:select>
 												</div>																				
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="sexo" class="col-form-label">Sexo</label>
+													<label for="idSexo" class="col-form-label">Sexo</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control" path="sexo" id="sexo" >
-												<option value="Macho">Macho</option>
-												<option value="Hembra">Hembra</option>									
-												</form:select>
+													<form:select class="form-control" path="idSexo" id="idSexo" >
+													<option value="0">Hembra</option>
+													<option value="1">Macho</option>																				
+													</form:select>
 												</div>																				
 											</div>
 											<div class="form-group row">
@@ -608,53 +608,47 @@
 										<div class="col-md-6">
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="estaActivo" class="col-form-label">Estado Activo</label>
+													<label for="idEstaActiv" class="col-form-label">Estado Activo</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control col-12" path="estaActivo" id="estaActivo" >													
-													<option value="Produccion">Produccion</option>
-													<option value="Seca">Seca</option>	
-													<option value="Preñada">Preñada</option>
-													<option value="NA">NA</option>							
+													<form:select class="form-control col-12" path="idEstaActiv" id="idEstaActiv">																										
+														<option value="2">Produccion</option>													
+														<option value="1">Preñada</option>
+														<option value="0">Seca</option>								
 													</form:select>
 												</div>																					
 											</div>
-											<div class="form-group row">
+											<!--  <div class="form-group row">
 												<div class="col-5">
-													<label for="estaAnim" class="col-form-label">Estado Animal</label>
+													<label for="esta" class="col-form-label">Estado Animal</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control col-12" path="estaAnim" id="estaAnim" >													
-													<option value="Normal">Normal</option>
-													<option value="Enfermo">Enfermo</option>	
-													<option value="Muerto">Muerto</option>				
+													<form:select class="form-control col-12" path="esta" id="esta" >													
+													<option value="0">Normal</option>
+													<option value="1">Enfermo</option>	
+													<option value="2">Muerto</option>				
 													</form:select>
-												</div>
-												
-												
-											</div>
+												</div>						
+											</div>-->
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="tipoGana" class="col-form-label">Tipo Ganado</label>
+													<label for="idTipoGana" class="col-form-label">Tipo Ganado</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control col-12" path="tipoGana" id="tipoGana" >													
-													<option value="Leche">Leche</option>
-													<option value="Carne">Carne</option>	
-													<option value="Traccion">Traccion</option>
-													<option value="Doble propostio">Doble propostio</option>
-													<option value="Triple proposito">Triple proposito</option>								
+													<form:select class="form-control col-12" path="idTipoGana" id="idTipoGana" >													
+													<option value="0">Leche</option>
+													<option value="1">Carne</option>	
 													</form:select>
 												</div>																						
 											</div>
 											<div class="form-group row">
 												<div class="col-5">
-													<label for="origen" class="col-form-label">Origen</label>
+													<label for="idOrig" class="col-form-label">Origen</label>
 												</div>
 												<div class="col-7">
-													<form:select class="form-control col-12" path="origen" id="origen" >													
-													<option value="Comprado">Comprado</option>
-													<option value="Autoctono">Autoctono</option>								
+													<form:select class="form-control col-12" path="idOrig" id="idOrig" >																									
+													<option value="0">Autoctono</option>
+													<option value="1">Comprado</option>								
 													</form:select>
 												</div>																						
 											</div>

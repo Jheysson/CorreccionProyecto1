@@ -27,37 +27,26 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 	
 	public CMGanadoVacuno() {
 		linkedHashSetGanadoVacuno = new LinkedHashSet<CEGanadoVacuno>();
-		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2001,
-				"Maria", 
-				"2017-08-16",//LocalDate.of(2017, 3, 7),
-				"Hembra",
-				calcularEdad("2017-08-16"), 
-				asignarEtapa(calcularEdad("2017-08-16")),
-				430.0, 1.4,
-				"Producción", 
-				"Normal",
-				"Heredord",
-				"Leche",
-				"Autoctono", 
-				0,
-				0));
-		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2002,
-				"Juana",
-				"2017-03-5",//LocalDate.of(2017, 3, 5),
-				"Hembra",
-				calcularEdad("2016-08-16"), 
-				asignarEtapa(calcularEdad("2016-08-16")),
-				450.0, 
-				1.5,
-				"Producción",
-				"Normal", 
-				"Hereford", 
-				"Leche", 
-				"Comprado", 
-				0,
-				0));
+		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2001, calcularEdad("2017-08-16"), 
+				"Perla", "2017-08-16",
+				500, 1.4, 2, 
+				LocalDate.now(), 0, 0, 
+				"Niguna", 
+				1, //estadoAnimal
+				0, //sexo 0=hembra 1=macho
+				1, //EstaActivo 0=Seca, 1=Preñada, 2=Produccion
+				1, //Origen 0=Autoctono, 1=Comprado 
+				1, //TipoGana 0=Leche, 1=Carne 
+				1, //Genotipo
+				0, //PropInsemin
+				asignarEtapa(calcularEdad("2017-08-16"))));
+		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2002, calcularEdad("2018-08-16"), 
+				"Juana", "2018-08-16",
+				490, 1.5, 2, 
+				LocalDate.now(), 0, 0, 
+				"Niguna", 1, 0, 1, 1, 1, 1,
+				0,asignarEtapa(calcularEdad("2018-08-16"))));
 	}
-
 	@Override
 	public void saveGanadoVacuno(CEGanadoVacuno poCEGanadoVacuno) {
 		log.info("FECHA ANTES DE SER EVALUADA"+poCEGanadoVacuno.getFecha_nacimiento());
@@ -65,7 +54,8 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		boolean madreApta = buscarMadre(poCEGanadoVacuno);
 		boolean verifExistente = verificarExiste(poCEGanadoVacuno);
 		if (madreApta && verifExistente) {
-			linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(poCEGanadoVacuno.getCuia(),
+			linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(
+					/*
 					poCEGanadoVacuno.getAliasGanadoVacuno(),
 					poCEGanadoVacuno.getFecha_nacimiento(),//LocalDate.of(2017, 3, 5),
 					poCEGanadoVacuno.getSexo(),
@@ -79,7 +69,26 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 					poCEGanadoVacuno.getTipoGana(), 
 					poCEGanadoVacuno.getOrigen(), 
 					poCEGanadoVacuno.getCuiaPadre(),
-					poCEGanadoVacuno.getCuiaMadre()));
+					poCEGanadoVacuno.getCuiaMadre()*/
+					poCEGanadoVacuno.getCuia(),
+					calcularEdad(poCEGanadoVacuno.getFecha_nacimiento()),
+					poCEGanadoVacuno.getAliasGanadoVacuno(),
+					poCEGanadoVacuno.getFecha_nacimiento(),
+					poCEGanadoVacuno.getPeso(),
+					poCEGanadoVacuno.getTalla(),
+					poCEGanadoVacuno.getCantiPartGana(),
+					LocalDate.now(),
+					poCEGanadoVacuno.getCuiaMadre(),
+					poCEGanadoVacuno.getCuiaPadre(),
+					poCEGanadoVacuno.getObse(),
+					1,
+					poCEGanadoVacuno.getIdSexo(),
+					poCEGanadoVacuno.getIdEstaActiv(),
+					poCEGanadoVacuno.getIdOrig(),
+					poCEGanadoVacuno.getIdTipoGana(),
+					poCEGanadoVacuno.getIdGeno(),0,
+					asignarEtapa(calcularEdad(poCEGanadoVacuno.getFecha_nacimiento()))
+					));
 		}else {
 			log.info("NO SE PUDO REGISTRAR");
 		}
@@ -95,7 +104,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 			if (moCEGanadoVacuno.getCuia() == poCEGanadoVacuno.getCuia()) {
 				log.info("ACTUALIZANDO EL REGISTRO CON EL CUIA "+poCEGanadoVacuno.getCuia()+"...");
 				
-				moCEGanadoVacuno.setAliasGanadoVacuno(poCEGanadoVacuno.getAliasGanadoVacuno());
+				/*moCEGanadoVacuno.setAliasGanadoVacuno(poCEGanadoVacuno.getAliasGanadoVacuno());
 				moCEGanadoVacuno.setCuiaMadre(poCEGanadoVacuno.getCuiaMadre());
 				moCEGanadoVacuno.setCuiaPadre(poCEGanadoVacuno.getCuiaPadre());
 				moCEGanadoVacuno.setEdad(calcularEdad(poCEGanadoVacuno.getFecha_nacimiento()));
@@ -106,7 +115,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 				moCEGanadoVacuno.setGenotipo(poCEGanadoVacuno.getGenotipo());
 				moCEGanadoVacuno.setOrigen(poCEGanadoVacuno.getOrigen());
 				
-				
+				*/
 			}
 		}
 		log.info("Verificar actualización: {}",consultaAll());
@@ -130,6 +139,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 
 	@Override
 	public LinkedHashSet<CEGanadoVacuno> consultaAll() {
+		log.info("TODOS LOS REGISTROS: {}",linkedHashSetGanadoVacuno);
 		return linkedHashSetGanadoVacuno;
 	}
 
@@ -154,7 +164,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		return edad;
 	}
 	protected String asignarEtapa(int edad) {
-					
+		log.info("RECIBIENDO LA EDAD PARA RETORNAR ETAPA: "+edad);
 		if(edad <= 4) {
 			etapa = "Ternero(a)";
 		}else if(edad > 4 && edad <=12) {
@@ -164,6 +174,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 		}else if(edad >= 24) {
 			etapa = "Adulto";
 		}
+		log.info("RETORNANDO LA ETAPA...: "+etapa);
 		return etapa;
 		
 	}protected boolean buscarMadre(CEGanadoVacuno oCEGanadoVacuno) {
@@ -176,7 +187,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 
 					if (moCEGanadoVacuno.getCuia() == oCEGanadoVacuno.getCuiaMadre()) {
 						log.info("SE ENCONTRÓ EL CUIA INGRESADO DE LA MADRE EN LOS REGISTROS ACTUALES");
-						if (moCEGanadoVacuno.getSexo().equals("Hembra") && moCEGanadoVacuno.getEdad()>18) {
+						if (moCEGanadoVacuno.getIdSexo()==0 && moCEGanadoVacuno.getEdad()>18) {
 							log.info("SE VALIDÓ COMO HEMBRA APTA");
 							rpta = true;
 							break;

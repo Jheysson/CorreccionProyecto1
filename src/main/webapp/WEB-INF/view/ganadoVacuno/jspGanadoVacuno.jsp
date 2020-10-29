@@ -566,13 +566,13 @@
 														<td><co:out value="${item.cuia}"></co:out></td>
 														<td><co:out value="${item.aliasGanadoVacuno}"></co:out></td>
 														<td><co:out value="${item.fecha_nacimiento}"></co:out></td>
-														<td><co:out value="${item.sexo}"></co:out></td>
+														<td><co:out value="${item.idSexo}"></co:out></td>
 														<td><co:out value="${item.edad}"></co:out></td>
 														<td><co:out value="${item.etapa}"></co:out></td>
 														<td><co:out value="${item.peso}"></co:out></td>
 														<td><co:out value="${item.talla}"></co:out></td>
-														<td><co:out value="${item.genotipo}"></co:out></td>
-														<td><co:out value="${item.tipoGana}"></co:out></td>
+														<td><co:out value="${item.idGeno}"></co:out></td>
+														<td><co:out value="${item.idTipoGana}"></co:out></td>
 														<td><spring:url
 															value="/ganadoVacuno/updateGanadoVacuno.lhs/${item.cuia}.lhs"
 															var="updateURL" /> <a class="btn btn-primary"

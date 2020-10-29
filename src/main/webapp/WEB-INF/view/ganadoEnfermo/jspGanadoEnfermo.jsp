@@ -14,7 +14,7 @@
 <meta name="author" content="">
 <link rel="stylesheet" type="text/css"
 	href="../css/bootstrap/bootstrap.min.css" />
-<!-- Estilo de la pagina CSS -->
+<!-- Estilo de la pagina CSS --> 
 <link rel="stylesheet" type="text/css"
 	href="../css/styleGeneral/style.css" />
 <!-- icons  fontawesome-->
@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" type="text/css" href="../css/css/animate.css" />
 <link rel="stylesheet" type="text/css" href="../css/css/spinners.css" />
-<title>Ganado Vacuno</title>
+<title>Ganado enfermo</title>
 
 </head>
 
@@ -502,14 +502,14 @@
 				<!-- ============================================================== -->
 				<div class="row page-titles">
 					<div class="col-md-5 align-self-center">
-						<h3 class="text-themecolor">Ganado Enfermo</h3>
+						<h3 class="text-themecolor">Ganado Vacuno</h3>
 					</div>
 					<div class="col-md-7 align-self-center">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><co:url
-									value="ListadoGanadoEnfermo.lhs" var="mensaje"></co:url><a
+									value="ListadoNatalidad.lhs" var="mensaje"></co:url><a
 								href="${mensaje}">Mantenimiento</a></li>
-							<li class="breadcrumb-item">Ganado Enfermo</li>
+							<li class="breadcrumb-item">Ganado enfermo</li>
 							<li class="breadcrumb-item active">Listado de ganado enfermo</li>
 						</ol>
 					</div>
@@ -532,55 +532,48 @@
 						<div class="card">
 							<div class="card-body">
 								<div style="margin-top: 20px; margin-left: 20px">
-									<div class="d-flex">
+								<div class="d-flex">
 										<div class="mr-auto">
 											<div class="form-group">
 												<co:url value="/ganadoEnfermo/agregarGanadoEnfermo.lhs"
 													var="mensaje"></co:url>
 												<a class="btn btn-primary" href="${mensaje}">Agregar
-													registro ganado</a>
+										registro de ganado enfermo</a>
 											</div>
 										</div>										
 									</div>
-									<div class="container">
-										<div class="container tab-pane active">
-											<table id="myTable"
-												class="table table-bordered table-hover toggle-circle footable-loaded footable tablet breakpoint">
-												<thead>
+										<table id="myTable" class="table table-bordered table-hover toggle-circle footable-loaded footable tablet breakpoint"
+										style="width: 100%">
+											<thead>
+												<tr>
+													<th>CUIA</th>
+													<th>Tipo de enfermedad</th>
+													<th>Fecha de ingreso</th>
+													<th>Observaciones</th>
+												</tr>
+											</thead>
+											<tbody>
+												<co:forEach items="${model.listGanadoEnfermo}" var="item">
 													<tr>
-														<th>CUIA</th>
-														<th>Enfermedad</th>
-														<th>Fecha Ingreso</th>
-														<th>Observacion</th>
-														<th>Editar</th>
-														<th>Eliminar</th>
+														<td><co:out value="${item.idGana}"></co:out></td>
+														<td><co:out value="${item.idEnfe}"></co:out></td>
+														<td><co:out value="${item.fechIngr}"></co:out></td>
+														<td><co:out value="${item.obse}"></co:out></td>
+														<td><spring:url
+															value="/ganadoEnfermo/updateGanadoEnfermo.lhs/${item.idGana}.lhs"
+															var="updateURL" /> <a class="btn btn-primary"
+														href="${updateURL}" role="button">Update</a></td>
+													<td><spring:url
+															value="/ganadoEnfermo/eliminarGanadoEnfermo.lhs/${item.idGana}.lhs"
+															var="deleteURL" /> <a class="btn btn-primary"
+														href="${deleteURL }" role="button">Delete</a></td>
 													</tr>
-
-												</thead>
-												<tbody>
-													<co:forEach items="${model.listGanadoEnfermo}"
-														var="itemcic">
-														<tr>
-															<td><co:out value="${itemcic.CUIA}"></co:out></td>
-															<td><co:out value="${itemcic.enfermedad}"></co:out></td>
-															<td><co:out value="${itemcic.fechIngreso}"></co:out></td>
-															<td><co:out value="${itemcic.observacion}"></co:out></td>
-
-															<td><spring:url
-																	value="/ganadoEnfermo/updateGanadoEnfermo.lhs/${itemcic.CUIA}.lhs"
-																	var="updateURL" /> <a class="btn btn-primary"
-																href="${updateURL}" role="button">Update</a></td>
-															<td><spring:url
-																	value="/ganadoEnfermo/eliminarGanadoEnfermo.lhs/${itemcic.CUIA}.lhs"
-																	var="deleteURL" /> <a class="btn btn-primary"
-																href="${deleteURL }" role="button">Delete</a></td>
-														</tr>
-													</co:forEach>
-												</tbody>
-											</table>
-										</div>
-									</div>
+												</co:forEach>
+											</tbody>
+										</table>
 								</div>
+							<!-- mover -->
+							
 							</div>
 						</div>
 					</div>
@@ -688,14 +681,8 @@
 	<!-- ============================================================== -->
 	<!-- ============================================================== -->
 	<!-- All Jquery -->
+	<!-- All Jquery -->
 	<!-- ============================================================== -->
-	
-	<!--Custom JavaScript -->
-	<script src="../js/plugins/Custom/custom.min.js"></script>
-	<!-- ============================================================== -->
-	<!-- Style switcher -->
-	<!-- ============================================================== -->
-	<script src="../js/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 	<script src="../js/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap tether Core JavaScript -->
 	<script src="../js/plugins/bootstrap/popper.min.js"></script>
@@ -771,7 +758,9 @@
         });
     });
     </script>
-
+	<!-- ============================================================== -->
+	<!-- Style switcher -->
+	<!-- ============================================================== -->
 </body>
 
 </html>

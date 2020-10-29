@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+<!-- VISTA AGREGAR -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css" href="../css/colors/blue.css" />
 <link rel="stylesheet" type="text/css" href="../css/css/animate.css" />
 <link rel="stylesheet" type="text/css" href="../css/css/spinners.css" />
-<title>Ganado Vacuno</title>
+<title>Ganado Enfermo</title>
 
 </head>
 
@@ -502,7 +502,7 @@
 				<!-- ============================================================== -->
 				<div class="row page-titles">
 					<div class="col-md-5 align-self-center">
-						<h3 class="text-themecolor">Registro Ganado Enfermo</h3>
+						<h3 class="text-themecolor">Registro Ganado Vacuno</h3>
 					</div>
 					<div class="col-md-7 align-self-center">
 						<ol class="breadcrumb">
@@ -510,8 +510,8 @@
 									value="ListadoNatalidad.lhs" var="mensaje"></co:url><a
 								href="${mensaje}">Mantenimiento</a></li>
 								
-							<li class="breadcrumb-item">Natalidad</li>
-							<li class="breadcrumb-item active">Registro Ganado Enfermo</li>
+							<li class="breadcrumb-item">Ganado Enfermo</li>
+							<li class="breadcrumb-item active">Registro de ganado enfermo</li>
 						</ol>
 					</div>
 					<div>
@@ -530,39 +530,56 @@
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card">
+						<div class="card container">
 							<div class="card-body">
 								<spring:url value="/ganadoEnfermo/save.lhs" var="saveURL" />
-								<form:form modelAttribute="ganadoEnfermo/ganadoEnfermoForm"
-									method="post" action="${saveURL }" cssClass="form">
-									<div class="form-row">
-										<div class="form-group col-md-6">
-											<label for="CUIA">CUIA</label>
-											<form:input path="CUIA" class="form-control" id="CUIA" />
+								<form:form modelAttribute="ganadoEnfermo/ganadoEnfermoForm" method="post"
+								action="${saveURL }" cssClass="form">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group row">
+												<div class="col-5">
+													<label for="idGana" class="col-form-label">CUIA</label>
+												</div>
+												<div class="col-7">
+													<form:input path="idGana" cssClass="form-control" id="idGana" />
+												</div>
+												<div class="col-5">
+													<label for="idEnfe" class="col-form-label">Enfermedad</label>
+												</div>
+												<div class="col-7">
+													<form:select class="form-control" path="idEnfe" id="idEnfe" >													
+													<option value="1">Mastitis</option>
+													<option value="2">Hemolactea</option>
+													<option value="3">Babesiosis</option>
+													<option value="4">Brucelosis</option>
+													<option value="5">Fiebre abstosa</option>
+													<option value="6">Tuberculosis</option>
+													<option value="7">Clostridiosis</option>
+													<option value="8">Leptospirosis</option>
+													<option value="9">Problemas en las pezuñas</option>	
+													<option value="10">Dermatitis necrotica</option>											
+													</form:select>
+												</div>																				
+											</div>
+											<div class="form-group row">										
+												<div class="col-5">
+													<label for="fechIngr" class="col-form-label">Fecha de ingreso</label>
+												</div>
+												<div class="col-7">
+													<form:input type="date" path="fechIngr" cssClass="form-control" id="fechIngr" />
+												</div>	
+												<div class="col-5">
+													<label for="obse" class="col-form-label">Observación</label>
+												</div>
+												<div class="col-7">
+													<form:input path="obse" cssClass="form-control" id="obse" />
+												</div>								
+											</div>
+											
+											
 										</div>
-										<div class="form-group col-md-6">
-											<label for="enfermedad">Enfermedad</label>
-											<form:input path="enfermedad" class="form-control"
-												id="enfermedad" />
-										</div>
-										<div class="form-group col-md-6">
-											<label for="fechIngreso">Fecha de Ingreso</label>
-											<form:input path="fechIngreso" class="form-control"
-												id="fechIngreso" />
-										</div>
-									
-										<div class="form-group col-md-6">
-											<label for="observacion">Observacion</label>
-											<form:input path="observacion" class="form-control"
-												id="observacion" />
-										</div>
-									</div>
-
-									<div class="form-row">
-										<div class="form-group col-md-6">
-											<label for="Estado">Estado</label>
-											<form:input path="Estado" class="form-control" id="Estado" />
-										</div>
+										
 									</div>
 									<button type="submit" class="btn btn-danger"
 										style="align-content: center; width: 300px; height: 45px">Guardar</button>

@@ -3,67 +3,68 @@ package pe.unjfsc.daw.entity;
 
 public class CEGanadoEnfermo {
 
-		private int CUIA;
-		private String enfermedad;
-		private String fechIngreso;
-		private String observacion;
-		private int Estado;
+		private int idGana;
+		private int idEnfe;
+		private String fechIngr;
+		private String obse;
+		private int esta;
 		public CEGanadoEnfermo() {
 			
 		}
-		public CEGanadoEnfermo (int CUIA, String enfermedad, String fechIngreso, String observacion, int Estado) {
+		public CEGanadoEnfermo (int idGana, int idEnfe, String fechIngr, String obse, int esta) {
 			super();
-			this.CUIA = CUIA;
-			this.enfermedad = enfermedad;
-			this.fechIngreso = fechIngreso;
-			this.observacion = observacion;
-			this.Estado = Estado;
+			this.idGana = idGana;
+			this.idEnfe = idEnfe;
+			this.fechIngr = fechIngr;
+			this.obse = obse;
+			this.esta = esta;
 			
 		}
-		public int getCUIA() {
-			return CUIA;
+		public int getIdGana() {
+			return idGana;
 		}
-		public void setCUIA(int cUIA) {
-			CUIA = cUIA;
+		public void setIdGana(int idGana) {
+			this.idGana = idGana;
 		}
-		public String getEnfermedad() {
-			return enfermedad;
+		public int getIdEnfe() {
+			return idEnfe;
 		}
-		public void setEnfermedad(String enfermedad) {
-			this.enfermedad = enfermedad;
+		public void setIdEnfe(int idEnfe) {
+			this.idEnfe = idEnfe;
 		}
-		public String getFechIngreso() {
-			return fechIngreso;
+		public String getFechIngr() {
+			return fechIngr;
 		}
-		public void setFechIngreso(String fechIngreso) {
-			this.fechIngreso = fechIngreso;
+		public void setFechIngr(String fechIngr) {
+			this.fechIngr = fechIngr;
 		}
-		public String getObservacion() {
-			return observacion;
+		public String getObse() {
+			return obse;
 		}
-		public void setObservacion(String observacion) {
-			this.observacion = observacion;
+		public void setObse(String obse) {
+			this.obse = obse;
 		}
-		public int getEstado() {
-			return Estado;
+		public int getEsta() {
+			return esta;
 		}
-		public void setEstado(int estado) {
-			Estado = estado;
+		public void setEsta(int esta) {
+			this.esta = esta;
 		}
 		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
-			builder.append("CEGanadoEnfermo [CUIA=");
-			builder.append(CUIA);
-			builder.append(", enfermedad=");
-			builder.append(enfermedad);
-			builder.append(", fechIngreso=");
-			builder.append(fechIngreso);
-			builder.append(", observacion=");
-			builder.append(observacion);
-			builder.append(", Estado=");
-			builder.append(Estado);
+			builder.append("CEGanadoEnfermo [idGana=");
+			builder.append(idGana);
+			builder.append(", idEnfe=");
+			builder.append(idEnfe);
+			builder.append(", fechIngr=");
+			builder.append(fechIngr);
+			builder.append(", obse=");
+			builder.append(obse);
+			builder.append(", esta=");
+			builder.append(esta);
 			builder.append("]");
 			return builder.toString();
 		}
+		
 }

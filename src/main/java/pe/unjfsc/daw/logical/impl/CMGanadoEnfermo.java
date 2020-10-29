@@ -21,17 +21,17 @@ public class CMGanadoEnfermo implements CIGanadoEnfermo {
 	public CMGanadoEnfermo() {
 		oListaFinalEnferma = new LinkedHashSet<CEGanadoEnfermo>();
 
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1901, "Mastitis", "2020, 10, 1", "Mejora considerable", 1));
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1902, "Mastitis", "2020, 10, 3", "Mejora considerable", 1));
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1903, "Mastitis", "2020, 10, 3", "Mejora considerable", 1));
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1904, "Hemolactea", "2020, 10, 6", "Mejora considerable", 1));
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1905, "Hemolactea", "2020, 10, 9", "Mejora considerable", 1));
-		oListaFinalEnferma.add(new CEGanadoEnfermo(1906, "Hemolactea", "2020, 10, 13", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1901, 1, "2020, 10, 1", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1902, 2, "2020, 10, 3", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1903, 1, "2020, 10, 3", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1904, 2, "2020, 10, 6", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1905, 1, "2020, 10, 9", "Mejora considerable", 1));
+		oListaFinalEnferma.add(new CEGanadoEnfermo(1906, 2, "2020, 10, 13", "Mejora considerable", 1));
 
 	}
 
 	public void saveGanadoEnfermo(CEGanadoEnfermo pCEGanadoEnfermo) {
-		Log.info("GUARDANDO EN EL REGISTRO CON EL CUIA" + pCEGanadoEnfermo.getCUIA());
+		Log.info("GUARDANDO EN EL REGISTRO CON EL CUIA" + pCEGanadoEnfermo.getIdGana());
 		oListaFinalEnferma.add(pCEGanadoEnfermo);
 
 	}
@@ -41,14 +41,14 @@ public class CMGanadoEnfermo implements CIGanadoEnfermo {
 
 		while (it.hasNext()) {
 			moCEGanadoEnfermo = it.next();
-			if (moCEGanadoEnfermo.getCUIA() == pCEGanadoEnfermo.getCUIA()) {
-				Log.info("ACTUAlIZANDO EL REGISTRO CON EL CUIA" + pCEGanadoEnfermo.getCUIA() + "...");
+			if (moCEGanadoEnfermo.getIdGana() == pCEGanadoEnfermo.getIdGana()) {
+				Log.info("ACTUAlIZANDO EL REGISTRO CON EL CUIA" + pCEGanadoEnfermo.getIdGana() + "...");
 
-				moCEGanadoEnfermo.setCUIA(pCEGanadoEnfermo.getCUIA());
-				moCEGanadoEnfermo.setEnfermedad(pCEGanadoEnfermo.getEnfermedad());
-				moCEGanadoEnfermo.setFechIngreso(pCEGanadoEnfermo.getFechIngreso());
-				moCEGanadoEnfermo.setObservacion(pCEGanadoEnfermo.getObservacion());
-				moCEGanadoEnfermo.setEstado(pCEGanadoEnfermo.getEstado());
+				moCEGanadoEnfermo.setIdGana(pCEGanadoEnfermo.getIdGana());
+				moCEGanadoEnfermo.setIdEnfe(pCEGanadoEnfermo.getIdEnfe());
+				moCEGanadoEnfermo.setFechIngr(pCEGanadoEnfermo.getFechIngr());
+				moCEGanadoEnfermo.setObse(pCEGanadoEnfermo.getObse());
+				moCEGanadoEnfermo.setEsta(pCEGanadoEnfermo.getEsta());
 
 			}
 
@@ -62,7 +62,7 @@ public class CMGanadoEnfermo implements CIGanadoEnfermo {
 
 		while (it.hasNext()) {
 			moCEGanadoEnfermo = it.next();
-			if (moCEGanadoEnfermo.getCUIA() == pCUIA) {
+			if (moCEGanadoEnfermo.getIdGana() == pCUIA) {
 				oListaFinalEnferma.remove(moCEGanadoEnfermo);
 				break;
 			}
@@ -79,7 +79,7 @@ public class CMGanadoEnfermo implements CIGanadoEnfermo {
 		Iterator<CEGanadoEnfermo> it = oListaFinalEnferma.iterator();
 		while (it.hasNext()) {
 			moCEGanadoEnfermo = it.next();
-			if (moCEGanadoEnfermo.getCUIA() == pCUIA) {
+			if (moCEGanadoEnfermo.getIdGana()== pCUIA) {
 				oCEGanadoEnfermoResponse = moCEGanadoEnfermo;
 				Log.info("REGISTRANDO EL CUIA" + oCEGanadoEnfermoResponse);
 				break;

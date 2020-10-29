@@ -32,7 +32,7 @@ public class CCPropietarioInseminacion {
 	public ModelAndView linkedHashSetShow() {
 		String lArchivoRealJsp="inseminacion/jspPropInseminacion";
 		String lFechaSistema=(new Date().toString());		
-		iListaFinal = new LinkedHashSet<CEPropietarioInseminacion>();	
+		iListaFinal = new LinkedHashSet<>();	
 		iListaFinal = oCMInseminacion.showAll();
 		Map<String, Object> myModel = new HashMap<String,Object>();
 		myModel.put("now", lFechaSistema);
@@ -49,31 +49,31 @@ public class CCPropietarioInseminacion {
 		return model;
 	}
 	
-	@RequestMapping(value="inseminacion/saveI.lhs", method=RequestMethod.POST)
+	@RequestMapping(value="inseminacion/save.lhs", method=RequestMethod.POST)
 	public ModelAndView saveInseminacion(@ModelAttribute("inseminacionForm") CEPropietarioInseminacion pCEPropInse) {
 		String lArchivoRealJsp="inseminacion/jspPropInseminacion";
 		oCMInseminacion.savePropiInseminacion(pCEPropInse);
-		iListaFinal = new LinkedHashSet<CEPropietarioInseminacion>();	
+		iListaFinal = new LinkedHashSet<>();	
 		iListaFinal = oCMInseminacion.showAll();	
 		Map<String, Object> myModel = new HashMap<String,Object>();
 		myModel.put("listPropi", iListaFinal);
 		log.info("Registro en controller" + pCEPropInse);
 		return new ModelAndView(lArchivoRealJsp,"model",myModel);
 	}
-	@RequestMapping(value="inseminacion/updatePropInse.lhs/{codigo}.lhs", method=RequestMethod.GET)
-	public ModelAndView updatePropInse(@PathVariable int codigo,CEPropietarioInseminacion pCePropInse) {
+	@RequestMapping(value="inseminacion/updatePropInse.lhs/{codiPropInse}.lhs", method=RequestMethod.GET)
+	public ModelAndView updatePropInse(@PathVariable int codiPropInse,CEPropietarioInseminacion pCePropInse) {
 		ModelAndView model = new ModelAndView();
-		CEPropietarioInseminacion pCEPropInse = oCMInseminacion.showBycodigo(codigo);
+		CEPropietarioInseminacion pCEPropInse = oCMInseminacion.showBycodigo(codiPropInse);
 		model.addObject("inseminacion/inseminacionFormUpdate", pCEPropInse);
 		model.setViewName("inseminacion/inseminacionFormUpdate");
 		return model;
 	}
 	
-	@RequestMapping(value = "inseminacion/updateI.lhs", method=RequestMethod.POST)
+	@RequestMapping(value = "inseminacion/update.lhs", method=RequestMethod.POST)
 	public ModelAndView updateInseminacion(@ModelAttribute("inseminacion/inseminacionFormUpdate") CEPropietarioInseminacion pCEPropInse) {
 		String lArchivoRealJsp="inseminacion/jspPropInseminacion";
 		oCMInseminacion.updatePropiInseminacion(pCEPropInse);
-		iListaFinal = new LinkedHashSet<CEPropietarioInseminacion>();	
+		iListaFinal = new LinkedHashSet<>();	
 		iListaFinal = oCMInseminacion.showAll();
 		Map<String, Object> myModel = new HashMap<String,Object>();
 		myModel.put("listPropi", iListaFinal);
@@ -81,9 +81,9 @@ public class CCPropietarioInseminacion {
 		return new ModelAndView(lArchivoRealJsp,"model",myModel);
 	}
 	
-	@RequestMapping(value = "inseminacion/eliminarPropInse.lhs/{codigo}.lhs", method=RequestMethod.GET)
-	public ModelAndView deleteInseminacion(@PathVariable int codigo) {		
-		oCMInseminacion.deletePropiInseminacion(codigo);
+	@RequestMapping(value = "inseminacion/eliminarPropInse.lhs/{codiPropInse}.lhs", method=RequestMethod.GET)
+	public ModelAndView deleteInseminacion(@PathVariable int codiPropInse) {		
+		oCMInseminacion.deletePropiInseminacion(codiPropInse);
 		return new ModelAndView("redirect:/inseminacion/ListadoInseminacion.lhs");
 	}
 	

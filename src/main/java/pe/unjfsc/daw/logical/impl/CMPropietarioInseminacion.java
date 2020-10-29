@@ -1,8 +1,8 @@
 package pe.unjfsc.daw.logical.impl;
 
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -18,69 +18,71 @@ public class CMPropietarioInseminacion implements CIPropietarioInseminacion{
 	private CEPropietarioInseminacion moCEPropieInse;
 	private CEPropietarioInseminacion oCEPropietarioInseResponse;
 	
+	
 	public CMPropietarioInseminacion() {
 		iListaPropi = new LinkedHashSet<CEPropietarioInseminacion>();
-		iListaPropi.add(new CEPropietarioInseminacion(120, 564.00, 1.64, "Establo 1", 20.00, "20/09/2020", 1, "Hereford", "N/O"));
-		iListaPropi.add(new CEPropietarioInseminacion(220, 614.00, 1.60, "Establo 2", 22.00, "21/09/2020", 1, "Hereford", "N/O"));
-		iListaPropi.add(new CEPropietarioInseminacion(320, 584.00, 1.58, "Establo 3", 24.00, "22/09/2020", 1, "Hereford", "N/O"));
-		iListaPropi.add(new CEPropietarioInseminacion(420, 604.00, 1.61, "Establo 4", 26.00, "23/09/2020", 1, "Hereford", "N/O"));
-		iListaPropi.add(new CEPropietarioInseminacion(520, 542.00, 1.62, "Establo 5", 19.00, "24/09/2020", 1, "Hereford", "N/O"));
+		iListaPropi.add(new CEPropietarioInseminacion(120, 1, 564.00, 1.64, "Establo 1", 20.00, LocalDate.now(), "N/O", 1));
+		iListaPropi.add(new CEPropietarioInseminacion(220, 2, 614.00, 1.60, "Establo 2", 22.00, LocalDate.now(), "N/O", 1));
+		iListaPropi.add(new CEPropietarioInseminacion(320, 3, 584.00, 1.58, "Establo 3", 24.00, LocalDate.now(), "N/O", 1));
+		iListaPropi.add(new CEPropietarioInseminacion(420, 2, 604.00, 1.61, "Establo 4", 26.00, LocalDate.now(), "N/O", 1));
+		iListaPropi.add(new CEPropietarioInseminacion(520, 1, 542.00, 1.62, "Establo 5", 19.00, LocalDate.now(), "N/O", 1));
 		
 		
 	}
-	
 	public void savePropiInseminacion(CEPropietarioInseminacion poCEPropiInseminacion) {
 		
-		log.info("GUARDANDO EN EL REGISTRO CON EL CODIGO "+ poCEPropiInseminacion.getcodigo());
+		
+		log.info("GUARDANDO EN EL REGISTRO CON EL CODIGO "+ poCEPropiInseminacion.getCodiPropInse());
 		iListaPropi.add(poCEPropiInseminacion);
 		
 	}
-
 	public void updatePropiInseminacion(CEPropietarioInseminacion poCEPropiInseminacion) {
 		Iterator<CEPropietarioInseminacion> it = iListaPropi.iterator();
 		while (it.hasNext()){
 			moCEPropieInse = it.next();
-			if(moCEPropieInse.getcodigo() == poCEPropiInseminacion.getcodigo()) {
-				moCEPropieInse.setcodigo(poCEPropiInseminacion.getcodigo());
-				moCEPropieInse.setPeso(poCEPropiInseminacion.getPeso());
-				moCEPropieInse.setTalla(poCEPropiInseminacion.getTalla());
-				moCEPropieInse.setLugar(poCEPropiInseminacion.getLugar());
-				moCEPropieInse.setPrecio(poCEPropiInseminacion.getPrecio());
-				moCEPropieInse.setFechcompra(poCEPropiInseminacion.getFechcompra());
-				moCEPropieInse.setEstado(poCEPropiInseminacion.getEstado());
-				moCEPropieInse.setGenotipo(poCEPropiInseminacion.getGenotipo());
+			if(moCEPropieInse.getCodiPropInse() == poCEPropiInseminacion.getCodiPropInse()){
+				log.info("ACTUALIZANDO EL REGISTTRO CON EL CODIGO" + poCEPropiInseminacion.getCodiPropInse());
+			
+				moCEPropieInse.setCodiPropInse(poCEPropiInseminacion.getCodiPropInse());
+				moCEPropieInse.setIdGeno(poCEPropiInseminacion.getIdGeno());
+				moCEPropieInse.setPesoPropInse(poCEPropiInseminacion.getPesoPropInse());
+				moCEPropieInse.setTallPropInse(poCEPropiInseminacion.getTallPropInse());
+				moCEPropieInse.setLugaPropInse(poCEPropiInseminacion.getLugaPropInse());
+				moCEPropieInse.setPrecPropInse(poCEPropiInseminacion.getPrecPropInse());
+				moCEPropieInse.setFechCompPropInse(poCEPropiInseminacion.getFechCompPropInse());
 				moCEPropieInse.setObse(poCEPropiInseminacion.getObse());
+				moCEPropieInse.setEsta(poCEPropiInseminacion.getEsta());
+				
 			}
-			log.info("Registro Actualizado"+moCEPropieInse);
+			log.info("Verificar registro Actualizado"+ moCEPropieInse);
 		}
-	}
-
+		}
 	
-	public void deletePropiInseminacion(int codigo) {
+	public void deletePropiInseminacion(int codiPropInse) {
 		
 		Iterator<CEPropietarioInseminacion> it = iListaPropi.iterator();
 		while(it.hasNext()) {
 			// moCENatalidad = new CENatalidad();
 			moCEPropieInse = it.next();
-			if(moCEPropieInse.getcodigo() == codigo) {
+			if(moCEPropieInse.getCodiPropInse() == codiPropInse) {
 				iListaPropi.remove(moCEPropieInse);
 				break;
 			}
 		}
 	}
-
 	public LinkedHashSet<CEPropietarioInseminacion> showAll() {
 		return iListaPropi;
 	}
-
-	public CEPropietarioInseminacion showBycodigo(int codigo) {
-		log.info("MOSTRANDO EL REGISTRO CON EL CODIGO "+ codigo +"...");
+	public CEPropietarioInseminacion showBycodigo(int pcodiPropInse) {
+		log.info("MOSTRANDO EL REGISTRO CON EL CODIGO "+ pcodiPropInse +"...");
 		Iterator<CEPropietarioInseminacion> it = iListaPropi.iterator();
 		while(it.hasNext()) {
 			// moCENatalidad = new CENatalidad();
 			moCEPropieInse = it.next();
-			if(moCEPropieInse.getcodigo() == codigo) {
+			if(moCEPropieInse.getCodiPropInse() == pcodiPropInse) {
 				oCEPropietarioInseResponse = moCEPropieInse;
+				log.info("REGISTRANDO EL CODIGO" + oCEPropietarioInseResponse);
+				
 				break;
 			}
 		}
@@ -92,4 +94,5 @@ public class CMPropietarioInseminacion implements CIPropietarioInseminacion{
 		this.oCEPropietarioInseResponse = oCEPropietarioInseResponse;
 	}
 
+	
 }

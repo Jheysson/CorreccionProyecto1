@@ -547,18 +547,19 @@
 										</div>
 									</div>
 									<table id="myTable"
-										class="table table-bordered table-hover toggle-circle footable-loaded footable tablet breakpoint">
+										class="table table-bordered table-hover toggle-circle footable-loaded footable tablet breakpoint"
+										style="width: 100%">
 										<thead>
 											<tr>
 												<th>Codigo</th>
+												<th>Genotipo</th>
 												<th>Peso</th>
 												<th>Talla</th>
 												<th>Lugar</th>
 												<th>Precio</th>
 												<th>Fecha de compra</th>
-												<th>Estado</th>
-												<th>Genotipo</th>
 												<th>Observación</th>
+												<th>Estado</th>
 												<th>Editar</th>
 												<th>Eliminar</th>
 											</tr>
@@ -566,22 +567,22 @@
 										<tbody>
 											<co:forEach items="${model.listPropi}" var="itemcic">
 												<tr>
-													<td><co:out value="${itemcic.codigo}"></co:out></td>
-													<td><co:out value="${itemcic.peso}"></co:out></td>
-													<td><co:out value="${itemcic.talla}"></co:out></td>
-													<td><co:out value="${itemcic.lugar}"></co:out></td>
-													<td><co:out value="${itemcic.precio}"></co:out></td>
-													<td><co:out value="${itemcic.fechcompra}"></co:out></td>
-													<td><co:out value="${itemcic.estado}"></co:out></td>
-													<td><co:out value="${itemcic.genotipo}"></co:out></td>
+													<td><co:out value="${itemcic.codiPropInse}"></co:out></td>
+													<td><co:out value="${itemcic.idGeno}"></co:out></td>
+													<td><co:out value="${itemcic.pesoPropInse}"></co:out></td>
+													<td><co:out value="${itemcic.tallPropInse}"></co:out></td>
+													<td><co:out value="${itemcic.lugaPropInse}"></co:out></td>
+													<td><co:out value="${itemcic.precPropInse}"></co:out></td>
+													<td><co:out value="${itemcic.fechCompPropInse}"></co:out></td>
 													<td><co:out value="${itemcic.obse}"></co:out></td>
+													<td><co:out value="${itemcic.esta}"></co:out></td>
 
 													<td><spring:url
-															value="/inseminacion/updatePropInse.lhs/${itemcic.codigo}.lhs"
+															value="/inseminacion/updatePropInse.lhs/${itemcic.codiPropInse}.lhs"
 															var="updateURL" /> <a class="btn btn-primary"
 														href="${updateURL}" role="button">Update</a></td>
 													<td><spring:url
-															value="/inseminacion/eliminarPropInse.lhs/${itemcic.codigo}.lhs"
+															value="/inseminacion/eliminarPropInse.lhs/${itemcic.codiPropInse}.lhs"
 															var="deleteURL" /> <a class="btn btn-primary"
 														href="${deleteURL }" role="button">Delete</a></td>
 												</tr>
@@ -589,10 +590,14 @@
 										</tbody>
 									</table>
 								</div>
+								<!-- mover -->
 							</div>
+							
+							
 						</div>
 					</div>
 				</div>
+				
 				<!-- ============================================================== -->
 				<!-- End PAge Content -->
 				<!-- ============================================================== -->

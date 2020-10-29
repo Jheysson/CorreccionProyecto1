@@ -555,13 +555,13 @@
 											<label for="genotipo">Genotipo</label>
 											<form:select class="form-control col-12" path="genotipo" id="genotipo" >
 											<option value="Seleccione">Seleccione</option>
-											<option value="Hereford">Hereford</option>
-											<option value="Charolais">Charolais</option>
-											<option value="Limousin">Limousin</option>
-											<option value="Brahman">Brahman</option>
-											<option value="Gyrolando">Gyrolando</option>
-											<option value="Brown Swiss">Brown Swiss</option>
-											<option value="Criollo">Criollo</option>											
+											<option value="1">Hereford</option>
+											<option value="2">Charolais</option>
+											<option value="3">Limousin</option>
+											<option value="4">Brahman</option>
+											<option value="5">Gyrolando</option>
+											<option value="6">Brown Swiss</option>
+											<option value="7">Criollo</option>											
 											</form:select>
 										</div>
 									</div>
@@ -570,8 +570,8 @@
 											<label for="sexo">Sexo</label>
 											<form:select class="form-control col-12" path="sexo" id="genotipo" >
 											<option value="Seleccione">Seleccione</option>
-											<option value="Macho">Macho</option>
-											<option value="Hembra">Hembra</option>									
+											<option value="1">Macho</option>
+											<option value="2">Hembra</option>									
 											</form:select>
 										</div>
 										<div class="form-group col-md-6">

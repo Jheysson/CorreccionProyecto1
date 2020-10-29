@@ -33,11 +33,11 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 				LocalDate.now(), 0, 0, 
 				"Niguna", 
 				1, //estadoAnimal
-				0, //sexo 0=hembra 1=macho
-				1, //EstaActivo 0=Seca, 1=Preñada, 2=Produccion
-				1, //Origen 0=Autoctono, 1=Comprado 
-				1, //TipoGana 0=Leche, 1=Carne 
-				1, //Genotipo
+				1, //sexo 1=hembra 2=macho
+				1, //EstaActivo 1=Seca, 2=Preñada, 3=Produccion
+				1, //Origen 1=Autoctono, 2=Comprado 
+				1, //TipoGana 1=Leche, 2=Carne 
+				1, //Genotipo 1=Hereford, 2=Charolais, 3=Limousin, 4=Brahman, 5=Gyrolando, 6=Brown Swiss, 7=Criollo
 				0, //PropInsemin
 				asignarEtapa(calcularEdad("2017-08-16"))));
 		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2002, calcularEdad("2018-08-16"), 
@@ -187,7 +187,7 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 
 					if (moCEGanadoVacuno.getCuiaGana() == oCEGanadoVacuno.getCuiaMadr()) {
 						log.info("SE ENCONTRÓ EL CUIA INGRESADO DE LA MADRE EN LOS REGISTROS ACTUALES");
-						if (moCEGanadoVacuno.getIdSexo()==0 && moCEGanadoVacuno.getEdadGana()>18) {
+						if (moCEGanadoVacuno.getIdSexo()==1 && moCEGanadoVacuno.getEdadGana()>18) {
 							log.info("SE VALIDÓ COMO HEMBRA APTA");
 							rpta = true;
 							break;

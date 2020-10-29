@@ -583,8 +583,8 @@
 												</div>
 												<div class="col-7">
 													<form:select class="form-control" path="idSexo" id="idSexo" >
-													<option value="0">Hembra</option>
-													<option value="1">Macho</option>																				
+													<option value="1">Hembra</option>
+													<option value="2">Macho</option>																				
 													</form:select>
 												</div>																				
 											</div>
@@ -612,9 +612,9 @@
 												</div>
 												<div class="col-7">
 													<form:select class="form-control col-12" path="idEstaActi" id="idEstaActi">																										
-														<option value="2">Produccion</option>													
-														<option value="1">Preñada</option>
-														<option value="0">Seca</option>								
+														<option value="3">Produccion</option>													
+														<option value="2">Preñada</option>
+														<option value="1">Seca</option>								
 													</form:select>
 												</div>																					
 											</div>
@@ -636,8 +636,8 @@
 												</div>
 												<div class="col-7">
 													<form:select class="form-control col-12" path="idTipoGana" id="idTipoGana" >													
-													<option value="0">Leche</option>
-													<option value="1">Carne</option>	
+													<option value="1">Leche</option>
+													<option value="2">Carne</option>	
 													</form:select>
 												</div>																						
 											</div>
@@ -647,8 +647,8 @@
 												</div>
 												<div class="col-7">
 													<form:select class="form-control col-12" path="idOrig" id="idOrig" >																									
-													<option value="0">Autoctono</option>
-													<option value="1">Comprado</option>								
+													<option value="1">Autoctono</option>
+													<option value="2">Comprado</option>								
 													</form:select>
 												</div>																						
 											</div>

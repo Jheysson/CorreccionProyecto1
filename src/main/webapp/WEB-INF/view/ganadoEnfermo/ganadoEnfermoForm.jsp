@@ -544,6 +544,8 @@
 												<div class="col-7">
 													<form:input path="idGana" cssClass="form-control" id="idGana" />
 												</div>
+												</div>
+												<div class="form-group row">
 												<div class="col-5">
 													<label for="idEnfe" class="col-form-label">Enfermedad</label>
 												</div>
@@ -568,7 +570,9 @@
 												</div>
 												<div class="col-7">
 													<form:input type="date" path="fechIngr" cssClass="form-control" id="fechIngr" />
-												</div>	
+												</div>												
+											</div>
+											<div class="form-group row">
 												<div class="col-5">
 													<label for="obse" class="col-form-label">Observación</label>
 												</div>

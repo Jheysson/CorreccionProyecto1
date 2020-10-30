@@ -42,10 +42,17 @@ private static final Logger log = LoggerFactory.getLogger("CMGanadoVacuno");
 				asignarEtapa(calcularEdad("2017-08-16"))));
 		linkedHashSetGanadoVacuno.add(new CEGanadoVacuno(2002, calcularEdad("2018-08-16"), 
 				"Juana", "2018-08-16",
-				490, 1.5, 2, 
+				490, 1.45, 2, 
 				LocalDate.now(), 0, 0, 
-				"Niguna", 1, 0, 1, 1, 1, 1,
-				0,asignarEtapa(calcularEdad("2018-08-16"))));
+				"Niguna", 
+				1, //estadoAnimal
+				2, //sexo 1=hembra 2=macho
+				1, //EstaActivo 1=Seca, 2=Preñada, 3=Produccion
+				1, //Origen 1=Autoctono, 2=Comprado 
+				1, //TipoGana 1=Leche, 2=Carne 
+				1, //Genotipo 1=Hereford, 2=Charolais, 3=Limousin, 4=Brahman, 5=Gyrolando, 6=Brown Swiss, 7=Criollo
+				0, //PropInsemin
+				asignarEtapa(calcularEdad("2018-08-16"))));
 	}
 	@Override
 	public void saveGanadoVacuno(CEGanadoVacuno poCEGanadoVacuno) {
